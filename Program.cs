@@ -23,7 +23,7 @@ while (true)
                     Console.WriteLine(ItemList.ToString(CurrentUserType == (int)UserType.Admin));
                     while (true)
                     {
-                        Console.WriteLine("Choose one of the following options:\n1- Add item\n2- Restock item\n3- Remove item\n4- Show items\n9- Quit");
+                        Console.WriteLine("\nChoose one of the following options:\n1- Add item\n2- Restock item\n3- Remove item\n4- Show items\n9- Quit");
 
                         if (int.TryParse(Console.ReadLine(), out OptionSelected))
                         {
@@ -196,7 +196,7 @@ while (true)
                     Console.WriteLine(ItemList.ToString(CurrentUserType == (int)UserType.Admin));
                     while (true)
                     {
-                        Console.WriteLine("Choose one of the following options:\n1- Add money\n2- Buy item\n3- Get credit\n4- Show items\n5-Return change\n9- Quit");
+                        Console.WriteLine("\nChoose one of the following options:\n1- Add money\n2- Buy item\n3- Get credit\n4- Show items\n5-Return change\n9- Quit");
                         if (int.TryParse(Console.ReadLine(), out OptionSelected))
                         {
 
@@ -211,15 +211,15 @@ while (true)
                                         {
                                             if (money > 0)
                                             {
-                                                Console.WriteLine(money + " added successfully,\ncurrent balance: " + CurrentUser.AddMoney(money));
+                                                Console.WriteLine("------------------------------\n"+money + " added successfully,\ncurrent balance: " + CurrentUser.AddMoney(money)+ "\n------------------------------");
                                                 break;
                                             }
                                             else { Console.WriteLine("-------------------------------\nMoney must be a positive number\n-------------------------------"); }
                                         }
                                         else
                                         {
-                                            Console.WriteLine("-------------------------------------\nMoney enter a valid number for price\n-------------------------------------");
-                                        }
+                                            Console.WriteLine("------------------------------\nEnter a valid number for Money\n------------------------------");
+                                        }                                                             
 
                                     }
                                     break;
@@ -243,13 +243,13 @@ while (true)
                                     }
                                     break;
                                 case 3:
-                                    Console.Write("----------------------------------\nCurrent balance: " + CurrentUser.GetCredit() + " JD's\n----------------------------------");
+                                    Console.WriteLine("----------------------------------\nCurrent balance: " + CurrentUser.GetCredit() + " JD's\n----------------------------------");
                                     break;
                                 case 4:
                                     Console.WriteLine(ItemList.ToString(CurrentUserType == (int)UserType.Admin));
                                     break;
                                 case 5:
-                                    Console.WriteLine(CurrentUser.ReturnChange() + "\tJD's returned");
+                                    Console.WriteLine("------------------------------\n"+CurrentUser.ReturnChange() + "\tJD's returned\n------------------------------");
                                     break;
                                 case 9:
                                     break;
